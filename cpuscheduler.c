@@ -10,6 +10,10 @@ int main()
   { 
     printf("Enter Arrival Time for Process Number %d :",count+1); 
     scanf("%d",&at[count]);
+    if(at[count]==0)
+    {
+    	goto exit;
+	}
     printf("Enter Burst Time for Process Number %d :",count+1);
     scanf("%d",&bt[count]); 
     rt[count]=bt[count]; 
@@ -45,5 +49,7 @@ int main()
   }
   printf("\nAverage Waiting Time= %f\n",wait_time*1.0/n);
   printf("Avg Turnaround Time = %f",turnaround_time*1.0/n);
+  exit:
+  	printf("Arrival should not equal to 0\nRestart the program");
   return 0;
 }
